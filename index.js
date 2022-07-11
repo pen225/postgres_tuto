@@ -24,4 +24,5 @@ dbConnexion.connect(function(err) {
 
 
 
-app.listen(port, () => {console.log(`The server listening on port ${port}`)});
+app.listen(process.env.PORT || port);
+// app.listen(port, () => {console.log(`The server listening on port ${port}`)});
