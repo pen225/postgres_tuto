@@ -4,20 +4,24 @@ const app = express();
 const descriptionRouter = require('./router/description.router')
 const port = process.env.PORT
 
-dbConnexion.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
+dbConnexion.connect()
 
-    app.set('views', './view');
-    app.set('view engine', 'ejs');
+app.set('views', './view');
+app.set('view engine', 'ejs');
 
-    app.use('/public', express.static('public'))
+app.use('/public', express.static('public'))
 
-    app.use(express.json());
-    app.use(express.urlencoded({ extended:true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended:true }));
 
-    app.use('/', descriptionRouter)
-});
+app.use('/', descriptionRouter)
+
+// dbConnexion.connect(function(err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+
+    
+// });
 
 
 
