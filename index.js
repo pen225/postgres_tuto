@@ -16,7 +16,7 @@ dbConnexion.connect(function(err) {
     app.use(express.json());
     app.use(express.urlencoded({ extended:true }));
 
-    app.use('/description', descriptionRouter)
+    app.use('/', descriptionRouter)
 });
 
 
